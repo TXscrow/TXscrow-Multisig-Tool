@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 
-		<title>Bitcoin Wallet by Coinb.in</title>
+		<title>TXscrow - The safe, easy, anonymous escrow</title>
 
         	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<meta name="keywords" content="bitcoin, wallet, multisig, multisignature, address, browser, javascript, js, broadcast, transaction, verify, decode" />
@@ -51,26 +51,28 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a href="#home" class="navbar-brand" id="homeBtn"><img src="images/coinbin.gif" style="height:25px;margin-top:-5px"></a>
+						<a href="#home" class="navbar-brand" id="homeBtn"><span style="color:#000000; background-color:darkgray; font-size:200%;"><strong>TXscrow</strong></span></a>
+						<!--<a href="#home" class="navbar-brand" id="homeBtn"><img src="images/coinbin.gif" style="height:25px;margin-top:-5px"></a>-->
 					</div>
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav">
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span> New<b class="caret"></b></a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span> Create Escrow<b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li><a href="#newAddress" data-toggle="tab">New Address</a></li>
 									<li><a href="#newMultiSig" data-toggle="tab">MultiSig Address</a></li>
-									<li><a href="#newTimeLocked" data-toggle="tab">Time Locked Address</a></li>
-									<li><a href="#newHDaddress" data-toggle="tab">HD Address</a></li>
+									<!--<li><a href="#newTimeLocked" data-toggle="tab">Time Locked Address</a></li>-->
+									<!--<li><a href="#newHDaddress" data-toggle="tab">HD Address</a></li>-->
 									<li class="divider"></li>
-									<li><a href="#newTransaction" data-toggle="tab">Transaction</a></li>
+									<!--<li><a href="#newTransaction" data-toggle="tab">Transaction</a></li>-->
 								</ul>
 							</li>
+							<li><a href="#newTransaction" data-toggle="tab"><span class="glyphicon glyphicon-bitcoin"></span> Release Escrow</a></li>
 							<li><a href="#verify" data-toggle="tab"><span class="glyphicon glyphicon-ok"></span> Verify</a></li>
-							<li><a href="#sign" data-toggle="tab"><span class="glyphicon glyphicon-pencil"></span> Sign</a></li>
+							<li><a href="#sign" data-toggle="tab"><span class="glyphicon glyphicon-pencil"></span> Sign Transaction</a></li>
 							<li><a href="#broadcast" data-toggle="tab"><span class="glyphicon glyphicon-globe"></span> Broadcast</a></li>
-							<li><a href="#wallet" data-toggle="tab"><span class="glyphicon glyphicon-briefcase"></span> Wallet</a></li>
-							<li><a href="#about" data-toggle="tab"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+							<!--<li><a href="#wallet" data-toggle="tab"><span class="glyphicon glyphicon-briefcase"></span> Wallet</a></li>-->
+							<!--<li><a href="#about" data-toggle="tab"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>-->
 
 							<li class="hidden"><a href="#settings" data-toggle="tab"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
 						</ul>
@@ -86,16 +88,17 @@
 					<div class="tab-pane tab-content active" id="home">
 						<div class="row">
 							<div class="col-md-12">
-								<h2>Coinb.in <small>Welcome to the Blockchain</small></h2>
+								<h2><small> The safe, easy, anonymous escrow.</small></h2>
 							</div>
 						</div>
 
 						<div class="jumbotron">
-							<h1>Bitcoin. It's your money!</h1>
-							<p>Be your own bank, take control of your own money and start using Bitcoin today!</p>
-							<p><a class="btn btn-primary btn-lg" href="#about" role="button">Learn more &raquo;</a></p>
+							<h1>TXscrow Multisig Tool</h1>
+							<p>Easy to audit modified version of coinb.in wallet</p>
+							<p>Tailored to work great with TXscrow Bitcoin escrow service.</p>
+							<p><a class="btn btn-primary btn-lg" href="http://txscrowsyfscl2nv.onion" role="button">Learn more &raquo;</a></p>
 						</div>
-
+						<!--
 						<hr>
 
 						<div class="row">
@@ -128,9 +131,9 @@
 
 							<div class="col-md-4">
 								<h3><span class="glyphicon glyphicon-wrench"></span>  Development</h3>
-								<p>Use what we've built to write your own projects! See our documention (coming soon), or contribute at <a href="https://github.com/OutCast3k/coinbin/">github</a>.</p>
+								<p>Use what we've built to write your own projects! See our documention (coming soon), or contribute at <a href="https://github.com/TXscrow/TXscrow-Multisig-Tool/">github</a>.</p>
 							</div>
-						</div>
+						</div>-->
 					</div>
 
 					<div class="tab-pane tab-content" id="wallet">
@@ -247,7 +250,7 @@
 
 					<div class="tab-pane tab-content" id="newAddress">
 						<h2>New Address <small>create a new address</small></h2>
-						<p>Any keys used you will need to manually store safely as they will be needed later to redeem the bitcoins.</p>
+						<p><span style="color:#ff0000"><b>WARNING. This page does not save anything. Any keys used you will need to backup as they will be needed later to redeem the bitcoins.</b></span></p>
 						<label>Address (Share)</label>
 
 						<div class="input-group">
@@ -259,7 +262,7 @@
 
 						<label>Public key (Share)</label>
 						<input id="newPubKey" type="text" class="form-control" readonly>
-						<label>Private key (WIF key)</label>
+						<label>Private key (WIF format)</label>
 						<div class="input-group">
 							<input id="newPrivKey" type="password" class="form-control" value="" readonly>
 							<span class="input-group-btn">
@@ -271,18 +274,33 @@
 							<label>AES-256 Encrypted WIF key</label>
 							<input id="newPrivKeyEnc" type="text" class="form-control" value="" readonly>
 						</div>
-
-						<h3>Address Options</h3>
-						<p>You can use the advanced options below to generate different kind of keys and addresses.</p>
 						<div class="checkbox">
 							<label><input type="checkbox" id="newCompressed" class="checkbox-inline" checked> Compress <span class="text-muted">(recommended)</span></label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" id="newBrainwallet" class="checkbox-inline"> Custom Seed or Brain Wallet</label>
-							<input type="text" class="form-control hidden" id="brainwallet">
+							<label><input type="checkbox" id="newBrainwallet" class="checkbox-inline"><strong>Check to create from agreement details or order form.</strong></label>
+							<p><u>Note</u> You can also calculate the sha256 hash of a file from any linux system using command <br> <i>echo -n "$(cat filename.txt)" | sha256sum</i></p>
+							<p>Can click verify button from menu to verify WIF matches with your sha256 hash.</p>
+							<textarea class="form-control hidden" id="brainwallet" style="width: 716px; height: 200px; border-width: 1px; padding: 5px;">Example order form.
+
+Product: cookie dough
+Quantity: 500 grams
+Total price: 1.65 btc
+
+Shipping address:
+Lenianstraat 23
+420 KD Hal Sun
+Neverland
+
+Seller email: frosty@example.com
+Seller PGP key: 6235 542D D02B F60A 0A26 DE23 B60C CAEA 5601 0ABF
+
+Buyer email: greendragon@example.com
+
+Other details: Within 15 days of payment buyer to be provided with tracking number after mailing.</textarea>
 						</div>
 
-						<div class="checkbox">
+						<!--<div class="checkbox">
 							<label><input type="checkbox" id="encryptKey" class="checkbox-inline"> Encrypt Private Key with AES-256 Password</label>
 							<div id="aes256passform" class="row hidden">
 								<div class="col-md-6">
@@ -300,25 +318,25 @@
 								</div>
 							</div>
 
-						</div>
+						</div>-->
 
 						<input type="button" class="btn btn-primary" value="Generate" id="newKeysBtn">
 						<br>
 					</div>
 
 					<div class="tab-pane tab-content" id="newMultiSig">
-						<h2>New Multisig Address <small>Secure multisig address</small></h2>
+						<h2>Create Multisig Address<small></small></h2>
 
 						<div class="row">
 
 							<div class="col-md-8">
 								<p>Public keys can be <a href="#newAddress">generated in your browser</a> or from your bitcoin client</a>.</p>
-								<p>Enter the public keys of all the participants, to create a <a href="https://en.bitcoin.it/wiki/Address#Multi-signature_addresses" target="_blank">multi signature address</a>. Maximum of 15 allowed. Compressed and uncompressed public keys are accepted.</p>
+								<p>Enter the public keys of all the participants, to create a <a href="https://en.bitcoin.it/wiki/Address#Multi-signature_addresses" target="_blank">multi signature address</a>. Use compressed public keys.</p>
 							</div>
 
-							<div class="col-md-3">
+							<!--<div class="col-md-3">
 								<p class="alert alert-info"><span class="glyphicon glyphicon-info-sign"></span> <a href="javascript:;" data-toggle="modal" data-target="#modalMediator"><abbr>Need a Mediator?</abbr></a></p>
-							</div>
+							</div>-->
 
 							<div class="col-md-1">
 							</div>
@@ -327,20 +345,29 @@
 						<div id="multisigPubKeys" class="row">
 							<div class="form-horizontal">
 								<div class="col-xs-11">
-									<input type="text" class="form-control pubkey">
+									<i>Public key #1 (Payee):</i><input type="text" class="form-control pubkey">
+									<br>
+                                                                        <i>Public key #2 (Payer):</i><input type="text" class="form-control pubkey">
+                                                                        <br>
+                                                                        <i>Public key #3 (Agreement):</i><input type="text" class="form-control pubkey">
+                                                                        <br>
+                                                                        <i>Public key #4 (Escrow):</i><input type="text" class="form-control pubkey" value="020a08add9f68647a5d59b79bd8fd645595b4ba7ce94dc0b5a3416ba6395e06a12">
+
 								</div>
-								<a href="javascript:;" class="pubkeyAdd"><span class="glyphicon glyphicon-plus"></span></a>
+								<!--<a href="javascript:;" class="pubkeyAdd"><span class="glyphicon glyphicon-plus"></span></a>-->
 								<br><br>
 							</div>
 						</div>
-
-						<p>Enter the amount of signatures required to release the coins</p>
+						<br>
+						<p>Amount of signatures required to release the coins</p>
 						<div class="row">
 							<div class="col-xs-3">
 								<select id="releaseCoins" class="form-control">
-									<option>1</option>
-									<option selected>2</option>
-									<option>3</option>
+                                                                        <option selected>3</option>
+                                                                </select> 
+									<!--<option>1</option>
+									<option>2</option>
+									<option selected>3</option>
 									<option>4</option>
 									<option>5</option>
 									<option>6</option>
@@ -353,7 +380,7 @@
 									<option>13</option>
 									<option>14</option>
 									<option>15</option>
-								</select>
+								</select>-->
 							</div>
 						</div>
 
@@ -362,8 +389,7 @@
 						<div id="multiSigErrorMsg" class="alert alert-danger" style="display:none;"></div>
 
 						<div class="alert alert-success hidden" id="multiSigData">
-							<label>Address</label>
-							<p>Payment should be made to this address:</p>
+							<label>Multisig Address</label>
 							<div class="row">
 								<div class="col-lg-6">
 									<div class="input-group">
@@ -374,11 +400,17 @@
 									</div>
 								</div>
 							</div>
+							<br>
+							<p><span style="color:#000000">Make payment of 1.5 mBTC ( 0.0015 BTC ) <i><u>in same transaction</u></i> to TXscrow at: <strong>1FPqZvsHDLvssXPCzYMd2n9VFg6cFJd9kV</strong></span></p>
+							<br>
+							<p><span style="color:#ff0000"><strong>IMPORTANT: Any multisig address that is funded without also paying TXscrow <u><i>in the same transaction</i></u> will be rejected by our services. This can be done from most wallets using the "pay to many" feature to pay to both addresses at same time.</strong></span></p>
+							<br>
 							<label>Redeem Script</label>
-							<p>This script should be <i>saved and should be shared with all the participants before a payment is made</i>, so they may validate the authenticity of the address, it will also be used later to release the bitcoins.</p>
+							<p>This script should <i>be saved and should be shared with the other participants before a payment is made</i>, so they may validate the authenticity of the address, it will also be used later to release the bitcoins.</p>
+							<p>This redeem script can be verified and decoded using the "verify" button in top menu.</p>
 							<textarea class="form-control script" style="height:160px" readonly></textarea>
-							<label>Shareable URL</label>
-							<input type="text" class="scriptUrl form-control" readonly>
+							<!--<label>Shareable URL</label>
+							<input type="text" class="scriptUrl form-control" readonly>-->
 						</div>
 
 						<input type="button" class="btn btn-primary" value="Submit" id="newMultiSigAddress">
@@ -494,9 +526,10 @@
 					</div>
 
 					<div class="tab-pane tab-content" id="newTransaction">
-						<h2>Transaction <small>Create a new transaction</small></h2>
+						<h2>Transaction <small>Create a new transaction to release funds from escrow</small></h2>
 						<p>Use this page to create a raw transaction</p>
-
+						<p>If releasing funds from escrow we recommend you input redeem script. Submitting redeem script here will autofill fields if connected to internet.</p>
+						<p><span style="color:#ff0000"><strong>Clicking submit will retrieve transaction details from internet. By default this tool is NOT configured to use Tor. If you want to be anonymous use this tool behind Tor or get transaction details manually from <a href="https://blockchainbdgpzk.onion/">https://blockchainbdgpzk.onion/</a> using Tor Browser.</strong></p>
 						<b>Address, WIF key or Multisig Redeem Script</b>:
 						<div class="input-group">
 							<span class="input-group-btn">
@@ -563,12 +596,9 @@
 						<br>
 
 						<div class="tab-content">
-
 							<div class="tab-pane fade in active" id="txoutputs">
-
-								<span class="pull-right"><a href="javascript:;" id="donateTxBtn" class="btn btn-link"><span class="glyphicon glyphicon-heart"></span> Donate!</a></span>
-
-								<p>Enter the address and amount you wish to make a payment to.</p>
+								<p>Enter the address and amount you wish to release funds to.</p>
+								<p>Be sure to deduct enough for suitable transaction fee.</p>
 								<div class="row">
 									<div class="col-xs-8">
 										<label><abbr title="Address to send to">Address</abbr></label>
@@ -669,10 +699,10 @@
 					</div>
 
 					<div class="tab-pane tab-content" id="verify">
-						<h2>Verify <small>transactions and other scripts</small></h2>
+						<h2>Verify <small>WIF key or transactions or redeem scripts</small></h2>
 						<div class="row">
 							<div class="col-md-12">
-								<p>Enter the raw transaction, redeem script, pubkey, hd address or wif key to convert it into a readable format that can be verified manually.</p>
+								<p>Enter the WIF key or raw transaction or redeem script to convert it into a readable format that can be verified manually.</p>
 								<textarea type="text" id="verifyScript" class="form-control" style="height:125px"></textarea>
 							</div>
 						</div>
@@ -779,7 +809,7 @@
 							<p>The above wif key has been decoded</p>
 							<p><b>Address</b>: <input type="text" class="form-control address" readonly></p>
 							<p><b>Public key</b>: <input type="text" class="form-control pubkey" readonly></p>
-							<p><b>Private key</b>: <input type="text" class="form-control privkey" readonly></p>
+							<p><b>Private key  or sha256 hashx</b>: <input type="text" class="form-control privkey" readonly></p>
 							<p><b>Is compressed</b>: <span class="iscompressed"></span></p>
 
 						</div>
@@ -888,10 +918,9 @@
 					<div class="tab-pane tab-content" id="sign">
 						<h2>Sign Transaction <small>once a transaction has been verified</small></h2>
 						<p>Once you have <a href="#verify">verified</a> a transaction you can sign and then <a href="#broadcast">broadcast</a> it into the network.</p>
-
 						<div class="row">
 							<div class="col-md-12">
-								<label for="signPrivateKey">Private key</label>
+								<label for="signPrivateKey">Enter private key in WIF format. Can click verify button from menu to verify WIF matches with your sha256 hash.</label>
 
 								<div class="input-group">
 									<input id="signPrivateKey" type="password" class="form-control" value="">
@@ -902,40 +931,13 @@
 							</div>
 						</div>
 						<br>
-
+						<p><b>Transaction to sign</b></p>
 						<div class="row">
 							<div class="col-md-12">
 								<textarea type="text" id="signTransaction" class="form-control" style="height:125px"></textarea>
 							</div>
 						</div>
 						<br>
-
-						<a href="javascript:;" id="signAdvancedCollapse">
-							<div class="well well-sm"><span class="glyphicon glyphicon-collapse-down"></span> Advanced Options</div>
-						</a>
-
-						<div id="signAdvanced" class="hidden">
-							<div class="row">
-								<div class="col-md-12">
-									<label for="sighashType">Sig Hash Type</label>
-
-									<select id="sighashType" class="form-control">
-										<option value="1" rel="SIGHASH_ALL: Signs all the inputs and outputs, protecting everything against modification.">ALL (default)</option>
-										<option value="2" rel="SIGHASH_NONE: Signs all of the inputs but none of the outputs, allowing anyone to change where the satoshis are going unless other signatures using other signature hash flags protect the outputs.">NONE</option>
-										<option value="3" rel="SIGHASH_SINGLE: The only output signed is the one corresponding to this input, ensuring nobody can change your part of the transaction but allowing other signers to change their part of the transaction.">SINGLE</option>
-										<option value="129" rel="SIGHASH_ALL|SIGHASH_ANYONECANPAY: Signs all of the outputs but only this one input, it allows anyone to add or remove other inputs, so anyone can contribute additional satoshis but they cannot change how many satoshis are sent nor where they go.">ALL|ANYONECANPAY</option>
-										<option value="130" rel="SIGHASH_NONE|SIGHASH_ANYONECANPAY: Signs only this one input and allows anyone to add or remove other inputs or outputs, so anyone who gets a copy of this input can spend it however they'd like.">NONE|ANYONECANPAY</option>
-										<option value="131" rel="SIGHASH_SINGLE|SIGHASH_ANYONECANPAY: Signs this one input and its corresponding output. Allows anyone to add or remove other inputs.">SINGLE|ANYONECANPAY</option>
-									</select>
-								</div>
-							</div>
-
-							<br>
-
-							<div class="alert alert-info" id="sighashTypeInfo">
-								SIGHASH_ALL: The default, signs all the inputs and outputs, protecting everything except the signature scripts against modification.
-							</div>
-						</div>
 
 						<div class="alert alert-danger hidden" id="signedDataError">
 							<span class="glyphicon glyphicon-exclamation-sign"></span> There is a problem with one or more of your inputs, please check and try again
@@ -956,13 +958,15 @@
 					</div>
 
 					<div class="tab-pane tab-content" id="broadcast">
-						<h2>Broadcast Transaction <small>into the bitcoin network</small></h2>
+						<h2>Broadcast Transaction <small>into the bitcoin network after having enough signatures</small></h2>
 						<a href="#settings" style="float:right;"><span class="glyphicon glyphicon-cog"></span></a>
-						<p>Enter your hex encoded bitcoin transaction</p>
+						<p>Enter your hex encoded bitcoin transaction after being signed by 3 of 4 keys.</p>
 						<textarea class="form-control" style="height:125px" id="rawTransaction"></textarea>
 						<br>
 						<div id="rawTransactionStatus" class="alert hidden">
 						</div>
+                                                <p><span style="color:#ff0000"><strong>Clicking submit will send transaction to internet. By default this tool is NOT configured to use Tor. If you want to be anonymous use this tool behind Tor or submit transaction at <a href="https://blockchainbdgpzk.onion/pushtx">https://blockchainbdgpzk.onion/pushtx</a> using Tor Browser.</strong></p>
+						<p>If have problems submitting transaction can click gear icon to change broadcast server.</p>
 						<input type="button" value="Submit" id="rawSubmitBtn" class="btn btn-primary">
 						<br>
 					</div>
@@ -992,22 +996,21 @@
 					</div>
 
 					<div class="tab-pane tab-content" id="settings">
-						<h2>Settings <small> making coinb.in even better!</small></h2>
-						<p>These simple settings below make coinb.in one of the most decentralized wallets in the world.</p>
-
+						<h2>Settings</h2>
+						<br>
 						<div class="row">
 							<div class="col-md-12">
 								<b>Network</b>: <br>
 								<p class="text-muted">Select which network you'd like to use for key pair generation.</p>
 								<select class="form-control" id="coinjs_coin">
 									<option value="bitcoin_mainnet" rel="0x00;0x80;0x05;0x488b21e;0x488ade4;coinb.in;coinb.in">Bitcoin (mainnet)</option>
-									<option value="litecoin_mainnet" rel="0x30;0xb0;0x05;0x019da462;0x019d9cfe;blockr.io_litecoin;chain.so_litecoin">Litecoin (mainnet)</option>
+									<!--<option value="litecoin_mainnet" rel="0x30;0xb0;0x05;0x019da462;0x019d9cfe;blockr.io_litecoin;chain.so_litecoin">Litecoin (mainnet)</option>
 									<option value="dogecoin_mainnet" rel="0x1e;0x9e;0x16;0x0827421e;0x089944e4;chain.so_dogecoin;chain.so_dogecoin">Dogecoin (mainnet)</option>
 									<option value="carboncoin_mainnet" rel="0x2f;0xaf;0x05;0x488b21e;0x488ade4;cryptoid.info_carboncoin;cryptoid.info_carboncoin">Carboncoin (mainnet)</option>
-									<option value="shadowcash_mainnet" rel="0x3f;0xbf;0x7d;0xee80286a;0xee8031e8;false;false">ShadowCash (mainnet)</option>
+									<option value="shadowcash_mainnet" rel="0x3f;0xbf;0x7d;0xee80286a;0xee8031e8;false;false">ShadowCash (mainnet)</option>-->
 									<option value="bitcoin_testnet" rel="0x6f;0xef;0xc4;0x043587cf;0x04358394;false;false">Bitcoin (testnet)</option>
 
-									<option value="custom" rel="0x00;0x80;0x05;0x488b21e;0x488ade4;false;false">Custom</option>
+									<!--<option value="custom" rel="0x00;0x80;0x05;0x488b21e;0x488ade4;false;false">Custom</option>-->
 								</select>
 							</div>
 						</div>
@@ -1062,10 +1065,10 @@
 									<option value="blockr.io_bitcoinmainnet"> Blockr.io (Bitcoin mainnet)</option>
 									<option value="chain.so_bitcoinmainnet"> Chain.so (Bitcoin mainnet)</option>
 									<option value="blockcypher_bitcoinmainnet"> Blockcypher.com (Bitcoin mainnet)</option>
-									<option value="blockr.io_litecoin"> Blockr.io (Litecoin)</option>
+									<!--<option value="blockr.io_litecoin"> Blockr.io (Litecoin)</option>
 									<option value="chain.so_dogecoin"> Chain.so (Dogecoin)</option>
-									<option value="cryptoid.info_carboncoin"> Cryptoid.info (Carboncoin)</option>
-								<!--	<option value="blockr.io_bitcointestnet"> Blockr.io (Bitcoin testnet)</option> -->
+									<option value="cryptoid.info_carboncoin"> Cryptoid.info (Carboncoin)</option>-->
+								    <!--<option value="blockr.io_bitcointestnet"> Blockr.io (Bitcoin testnet)</option>-->
 								</select>
 							</div>
 						</div>
@@ -1079,9 +1082,9 @@
 								<select class="form-control" id="coinjs_utxo">
 									<option value="coinb.in">coinb.in (Bitcoin mainnet)</option>
 									<option value="blockr.io_bitcoinmainnet"> Blockr.io (Bitcoin mainnet)</option>
-									<option value="chain.so_litecoin"> Chain.so (Litecoin)</option>
+									<!--<option value="chain.so_litecoin"> Chain.so (Litecoin)</option>
 									<option value="chain.so_dogecoin"> Chain.so (Dogecoin)</option>
-									<option value="cryptoid.info_carboncoin"> Cryptoid.info (Carboncoin)</option>
+									<option value="cryptoid.info_carboncoin"> Cryptoid.info (Carboncoin)</option>-->
 								</select>
 							</div>
 						</div>
@@ -1096,7 +1099,7 @@
 					</div>
 
 					<br>
-					<p class="text-muted">This page uses javascript to generate your addresses and sign your transactions within your browser, this means we <i>never</i> receive your private keys, this can be independently verified by reviewing the source code on <a href="https://github.com/OutCast3k/coinbin/" target="_blank">github</a>. You can even <a href="https://github.com/OutCast3k/coinbin/archive/master.zip">download</a> this page and host it yourself or run it offline!</p>
+					<p class="text-muted">This page uses javascript to generate your addresses and sign your transactions within your browser, this means we <i>never</i> receive your private keys, this can be independently verified by reviewing the source code on <a href="https://github.com/TXscrow/TXscrow-Multisig-Tool/" target="_blank">github</a>. You can even <a href="https://github.com/TXscrow/TXscrow-Multisig-Tool/archive/master.zip">download</a> this page and host it yourself or run it offline!</p>
 					<br>
 
 				</div>
