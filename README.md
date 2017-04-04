@@ -1,5 +1,16 @@
-coinbin
-=======
+TXscrow Multisig Tool
+==================
+TXscrow Multisig Tool is an easy to audit modified version of Coinbin. Designed to work great with TXscrow service.
+http://txscrowsyfscl2nv.onion/
+
+To run just extract the .zip and open index.html in browser.
+
+We modified only the index.html file from original coinbin branch so you can easily compare differences. You can use the compare button in github to see all changes we made to the index.html file
+
+Props to the great developers behind Coinbin.
+
+Coinbin
+======
 
 A Open Source Browser Based Bitcoin Wallet. Version 1.2 beta by OutCast3k
 
@@ -7,26 +18,4 @@ Live version available at http://coinb.in/ or http://4zpinp6gdkjfplhk.onion
 
 Github URL: https://github.com/OutCast3k/coinbin/
 
-Coinb.in supports a number of key features such as: 
-
-- Offline Compressed & uncompressed Address creation.
-- Offline Multisignature Address creation.
-- "In browser" Key (re)generation. 
-- Send and receive payments.
-- Ability to decode transactions, redeem scripts and more offline.
-- Build custom transactions offline.
-- Sign transactions offline.
-- Signatures are deterministic as per RFC 6979 (https://tools.ietf.org/html/rfc6979#section-3.2)
-- Broadcast transactions.
-- nLockTime support.
-- Add custom data to transactions with the use of OP_RETURN.
-- Support current Dark Wallet Stealth Address structure (as of version Alpha 7) for outputs.
-- Brain wallet support.
-- Compatible with bitcoin-qt
-- An offical .onion address for tor users.
-- Offline qrcode creator and scanning tool
-- HD (bip32) support
-- Supports altcoins such as litecoin
-- Replace by fee (RBF) Support
-
-Donate to 1CWHWkTWaq1K5hevimJia3cyinQsrgXUvg to see more development!
+Coinbin donation address: 1CWHWkTWaq1K5hevimJia3cyinQsrgXUvg to see more development!
