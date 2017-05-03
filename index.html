@@ -59,8 +59,8 @@
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span> Create Escrow<b class="caret"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="#newAddress" data-toggle="tab">New Address</a></li>
-									<li><a href="#newMultiSig" data-toggle="tab">MultiSig Address</a></li>
+									<li><a href="#newAddress" data-toggle="tab">Create Key</a></li>
+									<li><a href="#newMultiSig" data-toggle="tab">Create MultiSig Address</a></li>
 									<!--<li><a href="#newTimeLocked" data-toggle="tab">Time Locked Address</a></li>-->
 									<!--<li><a href="#newHDaddress" data-toggle="tab">HD Address</a></li>-->
 									<li class="divider"></li>
@@ -70,7 +70,7 @@
 							<li><a href="#newTransaction" data-toggle="tab"><span class="glyphicon glyphicon-bitcoin"></span> Release Escrow</a></li>
 							<li><a href="#verify" data-toggle="tab"><span class="glyphicon glyphicon-ok"></span> Verify</a></li>
 							<li><a href="#sign" data-toggle="tab"><span class="glyphicon glyphicon-pencil"></span> Sign Transaction</a></li>
-							<li><a href="#broadcast" data-toggle="tab"><span class="glyphicon glyphicon-globe"></span> Broadcast</a></li>
+							<li><a href="#broadcast" data-toggle="tab"><span class="glyphicon glyphicon-globe"></span> Broadcast Transaction</a></li>
 							<!--<li><a href="#wallet" data-toggle="tab"><span class="glyphicon glyphicon-briefcase"></span> Wallet</a></li>-->
 							<!--<li><a href="#about" data-toggle="tab"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>-->
 
@@ -83,6 +83,7 @@
 			<div id="content" class="container">
 
 				<noscript class="alert alert-danger center-block"><span class="glyphicon glyphicon-exclamation-sign"></span> This page uses javascript, please enable it to continue!</noscript>
+
 
 				<div class="tab-content">
 					<div class="tab-pane tab-content active" id="home">
@@ -249,9 +250,9 @@
 					</div>
 
 					<div class="tab-pane tab-content" id="newAddress">
-						<h2>New Address <small>create a new address</small></h2>
+						<h2>Create Key <small>create a key to use for the multisig account</small></h2>
 						<p><span style="color:#ff0000"><b>WARNING. This page does not save anything. Any keys used you will need to backup as they will be needed later to redeem the bitcoins.</b></span></p>
-						<label>Address (Share)</label>
+						<!-- <label>Address (Share)</label>
 
 						<div class="input-group">
 							<input id="newBitcoinAddress" type="text" class="form-control address" value="" readonly>
@@ -259,6 +260,7 @@
 								<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>
 							</span>
 						</div>
+-->
 
 						<label>Public key (Share)</label>
 						<input id="newPubKey" type="text" class="form-control" readonly>
@@ -390,21 +392,20 @@ Other details: Within 15 days of payment buyer to be provided with tracking numb
 
 						<div class="alert alert-success hidden" id="multiSigData">
 							<label>Multisig Address</label>
+							<b>
 							<div class="row">
 								<div class="col-lg-6">
 									<div class="input-group">
-										<input type="text" class="form-control address" value="" readonly>
-										<span class="input-group-btn">
-											<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>
-										</span>
+										<input type="text" class="form-control address" style="width:500px" value="" readonly>
 									</div>
 								</div>
 							</div>
-							<br>
-							<p><span style="color:#000000">Make payment of 1.5 mBTC ( 0.0015 BTC ) <i><u>in same transaction</u></i> to TXscrow at: <strong>1FPqZvsHDLvssXPCzYMd2n9VFg6cFJd9kV</strong></span></p>
-							<br>
+							</b>
+<br>
+							<label>Make payment of 1.35 mBTC ( 0.00135 BTC ) <i><u>in same transaction</u></i> to TXscrow at:</label>
+							<p><b><span style="color:#404040">&nbsp;    1FPqZvsHDLvssXPCzYMd2n9VFg6cFJd9kV</span></b></p>
 							<p><span style="color:#ff0000"><strong>IMPORTANT: Any multisig address that is funded without also paying TXscrow <u><i>in the same transaction</i></u> will be rejected by our services. This can be done from most wallets using the "pay to many" feature to pay to both addresses at same time.</strong></span></p>
-							<br>
+							<hr>
 							<label>Redeem Script</label>
 							<p>This script should <i>be saved and should be shared with the other participants before a payment is made</i>, so they may validate the authenticity of the address, it will also be used later to release the bitcoins.</p>
 							<p>This redeem script can be verified and decoded using the "verify" button in top menu.</p>
@@ -529,7 +530,7 @@ Other details: Within 15 days of payment buyer to be provided with tracking numb
 						<h2>Transaction <small>Create a new transaction to release funds from escrow</small></h2>
 						<p>Use this page to create a raw transaction</p>
 						<p>If releasing funds from escrow we recommend you input redeem script. Submitting redeem script here will autofill fields if connected to internet.</p>
-						<p><span style="color:#ff0000"><strong>Clicking submit will retrieve transaction details from internet. By default this tool is NOT configured to use Tor. If you want to be anonymous use this tool behind Tor or get transaction details manually from <a href="https://blockchainbdgpzk.onion/">https://blockchainbdgpzk.onion/</a> using Tor Browser.</strong></p>
+						<p><span style="color:#ff0000"><strong>Clicking submit will retrieve transaction details from internet. By default this tool is NOT configured to use Tor. If you want to be anonymous can use this tool behind Tor or with Tor Browser.</strong></p>
 						<b>Address, WIF key or Multisig Redeem Script</b>:
 						<div class="input-group">
 							<span class="input-group-btn">
@@ -807,9 +808,9 @@ Other details: Within 15 days of payment buyer to be provided with tracking numb
 						<div class="hidden verifyData" id="verifyPrivKey">
 							<h4>WIF key</h4>
 							<p>The above wif key has been decoded</p>
-							<p><b>Address</b>: <input type="text" class="form-control address" readonly></p>
+							<!--<p><b>Address</b>: <input type="text" class="form-control address" readonly></p>-->
 							<p><b>Public key</b>: <input type="text" class="form-control pubkey" readonly></p>
-							<p><b>Private key  or sha256 hashx</b>: <input type="text" class="form-control privkey" readonly></p>
+							<p><b>Private key  or sha256 hash</b>: <input type="text" class="form-control privkey" readonly></p>
 							<p><b>Is compressed</b>: <span class="iscompressed"></span></p>
 
 						</div>
@@ -965,7 +966,7 @@ Other details: Within 15 days of payment buyer to be provided with tracking numb
 						<br>
 						<div id="rawTransactionStatus" class="alert hidden">
 						</div>
-                                                <p><span style="color:#ff0000"><strong>Clicking submit will send transaction to internet. By default this tool is NOT configured to use Tor. If you want to be anonymous use this tool behind Tor or submit transaction at <a href="https://blockchainbdgpzk.onion/pushtx">https://blockchainbdgpzk.onion/pushtx</a> using Tor Browser.</strong></p>
+                                                <p><span style="color:#ff0000"><strong>Clicking submit will send transaction to internet. By default this tool is NOT configured to use Tor. If you want to be anonymous can use this tool behind Tor or with Tor Browser.</strong></p>
 						<p>If have problems submitting transaction can click gear icon to change broadcast server.</p>
 						<input type="button" value="Submit" id="rawSubmitBtn" class="btn btn-primary">
 						<br>
@@ -979,7 +980,6 @@ Other details: Within 15 days of payment buyer to be provided with tracking numb
 
 					<div class="tab-pane tab-content" id="about">
 						<h2>About <small>open source bitcoin wallet</small></h2>
-						<p>Version 1.2</p>
 						<p>Compatible with bitcoin-qt</p>
 						<p>Github <a href="https://github.com/OutCast3k/coinbin/">https://github.com/OutCast3k/coinbin/</a></p>
 						<p>TOR <a href="http://4zpinp6gdkjfplhk.onion">4zpinp6gdkjfplhk.onion</a></p>
@@ -1100,15 +1100,14 @@ Other details: Within 15 days of payment buyer to be provided with tracking numb
 
 					<br>
 					<p class="text-muted">This page uses javascript to generate your addresses and sign your transactions within your browser, this means we <i>never</i> receive your private keys, this can be independently verified by reviewing the source code on <a href="https://github.com/TXscrow/TXscrow-Multisig-Tool/" target="_blank">github</a>. You can even <a href="https://github.com/TXscrow/TXscrow-Multisig-Tool/archive/master.zip">download</a> this page and host it yourself or run it offline!</p>
+<center>Highly recommended to keep this tool up to date with <a href="https://github.com/TXscrow/TXscrow-Multisig-Tool">latest version</a></center>
 					<br>
-
 				</div>
 			</div>
 		</div>
 
 		<div id="footer">
 			<div class="container text-right">
-	        		<p class="text-muted">Version 1.2</p>
 			</div>
 		</div>
 
