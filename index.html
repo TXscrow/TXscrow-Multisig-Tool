@@ -391,7 +391,7 @@ Other details: Within 15 days of payment buyer to be provided with tracking numb
 						<div id="multiSigErrorMsg" class="alert alert-danger" style="display:none;"></div>
 
 						<div class="alert alert-success hidden" id="multiSigData">
-							<label>Multisig Address</label>
+							<label>Multi signature address to send funds to</label>
 							<b>
 							<div class="row">
 								<div class="col-lg-6">
@@ -402,7 +402,7 @@ Other details: Within 15 days of payment buyer to be provided with tracking numb
 							</div>
 							</b>
 <br>
-							<label>Make payment of 1.35 mBTC ( 0.00135 BTC ) <i><u>in same transaction</u></i> to TXscrow at:</label>
+							<label>When funding multisig address make payment of 1.35 mBTC ( 0.00135 BTC ) <i>in same transaction</i> to TXscrow at:</label>
 							<p><b><span style="color:#404040">&nbsp;    1FPqZvsHDLvssXPCzYMd2n9VFg6cFJd9kV</span></b></p>
 							<p><span style="color:#ff0000"><strong>IMPORTANT: Any multisig address that is funded without also paying TXscrow <u><i>in the same transaction</i></u> will be rejected by our services. This can be done from most wallets using the "pay to many" feature to pay to both addresses at same time.</strong></span></p>
 							<hr>
@@ -714,17 +714,15 @@ Other details: Within 15 days of payment buyer to be provided with tracking numb
 							<p><span style="float:right"><a href="javascript:;" target="_blank" class="verifyLink" title="Link to this page"><span class="glyphicon glyphicon-link"></span></a></span>The above redeem script has been decoded</p>
 
 							<div class="hidden" id="verifyRsDataMultisig">
-                                <label>Multi Signature Address</label>
+                                <label>Multi signature address to send funds to</label>
     							<div class="row">
     								<div class="col-lg-6">
     									<div class="input-group">
-    										<input type="text" class="form-control address multisigAddress" value="" readonly>
-    										<span class="input-group-btn">
-    											<button class="qrcodeBtn btn btn-default" type="button" data-toggle="modal" data-target="#modalQrcode"><span class="glyphicon glyphicon-qrcode"></span></button>
-    										</span>
+    										<input type="text" class="form-control address multisigAddress" style="width:500px" value="" readonly>
     									</div>
     								</div>
     							</div>
+							<p>When funding multisig address make payment of 1.35 mBTC ( 0.00135 BTC ) <i>in same transaction</i> to TXscrow at:<br>&nbsp;&nbsp; 1FPqZvsHDLvssXPCzYMd2n9VFg6cFJd9kV</p>
 							<p></p>
     							<label>Required Signatures</label><span> Should be 3</span>
     							<p class="signaturesRequired">?</p>
